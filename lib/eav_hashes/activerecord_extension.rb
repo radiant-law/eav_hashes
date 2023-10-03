@@ -8,7 +8,7 @@ module ActiveRecord
       def eav_hash_for (hash_name, options={})
         # Fill in default options not otherwise specified
         options[:hash_name] = hash_name
-        options[:parent_class_name] = self.name.to_sym
+        options[:parent_class_name] = self.name.to_str
         options = ActiveRecord::EavHashes::Util::fill_options_hash options
 
         # Store the options hash in a class variable to create the EavHash object
